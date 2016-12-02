@@ -25,8 +25,7 @@ walk (Position (d, (x, y))) n = Position (d, c') where
          W -> (x - n, y)
 
 move :: State -> Instruction -> State
-move (Position (d, c)) (Move (t, n)) =
-  walk (Position (turn d t, c)) n
+move (Position (d, c)) (Move (t, n)) = walk (Position (turn d t, c)) n
 
 dist :: State -> State -> Int
 dist (Position (_, (x1, y1))) (Position (_, (x2, y2))) =
