@@ -13,10 +13,8 @@ start = Position (N, (0, 0))
 turn :: Cardinal -> Turn -> Cardinal
 turn N L = W
 turn W R = N
-turn d t =
-  case t of
-    R -> succ d
-    L -> pred d
+turn d L = pred d
+turn d R = succ d
 
 walk :: State -> Int -> State
 walk (Position (d, (x, y))) n = Position (d, c') where
