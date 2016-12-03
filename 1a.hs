@@ -37,6 +37,5 @@ readInstruction (t:n) = Move (read [t], read n)
 main :: IO ()
 main = do
   raw <- getLine
-  let instructions = map readInstruction $ splitOn ", " raw
-  let end = foldl move start instructions
-  print $ dist start end
+  print $
+    dist start $ foldl move start $ map readInstruction $ splitOn ", " raw
